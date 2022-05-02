@@ -1,0 +1,177 @@
+
+
+:root {
+    --dark: rgb(15, 17, 21);
+    --darker: #1f2937;
+    --darker: #111827;
+    --gray: #727476;
+    --light: #EEE;
+    --pink: #e0e7df;
+    --purple: #86be2c;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: #fff;
+}
+
+    /* margin auto centers the header on big screens*/
+    /* max-width makes sure the width doesnt goes above 800px */
+header {
+    padding: 2rem 2rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-bottom: 1.2rem;
+    color: var(--gray);
+}
+
+#new-task-form {
+    display: flex;
+    margin-top: 5rem;
+}
+
+input, button {
+    border: none;
+    appearance: none;
+    outline: none;
+    background: none;
+}
+
+/* flex: 1 1 0% pushes it all the way across */
+#new-task-input {
+    flex: 1 1 0%;
+    background: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 2rem;
+    color: var(--light);
+    font-size: 18px;
+    
+}
+
+#new-task-input::placeholder {
+    color: var(--gray);
+}
+
+#new-task-submit {
+    color: var(--pink);
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--pink),
+    var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+#new-task-submit:hover {
+    opacity: 0.7;
+}
+
+#new-task-submit:active {
+    opacity: 0.5;
+}
+
+
+main {
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list{
+    padding: 1rem;
+}
+
+.task-list h2 {
+    font-size: 1.5rem;
+    color: var(--gray);
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+#tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background: var(--darker);
+    padding: 0.7rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+
+#tasks .task .content {
+    flex: 1 1 0%;
+}
+
+#tasks .task .content .text {
+    color: var(--light);
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+/* if we remove the read only prop in html text is going to 
+be pink */
+#tasks .task .content .text:not(:read-only) {
+    color: var(--pink);
+}
+
+
+
+#tasks .task .actions {
+    display: flex;
+    margin: 0 -0.05rem;
+}
+
+
+#tasks .actions button {
+    cursor: pointer;
+    margin: 0 0.05rem;
+    font: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+
+#tasks .task .action:hover {
+    opacity: 0.7;
+}
+
+#tasks .actions button:active {
+    opacity: 0.5;
+}
+
+#tasks .actions .edit {
+    background-image: linear-gradient(to right, var(--pink),
+    var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+
+#tasks .actions .delete {
+    color: crimson;
+}
+
